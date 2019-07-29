@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--引入dao和dataSource配置文件-->
+    <import resource="classpath:applicationContext-dao.xml"/>
+    <!--声明事务管理器-->
+    <bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    <!--需要实施业务增强的目标业务bean-->
+    <bean id = "bbtFormTarget" class="xx.xx.xxx.xxx"
+        p:froumDao-ref="formDao"/>
+
+    <bean id="bbbForm" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"
+        p:transactionManager-ref="txManager"
+        p:target-ref="bbtFormTarget">
+        <property name="transactionAttributes">
+            <props>
+                <prop key="get*">PROPAGATION_REQUIRED,readOnly</prop>
+            </props>
+        </property>
+    </bean>
+</beans>
