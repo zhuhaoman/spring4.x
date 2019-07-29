@@ -9,8 +9,8 @@
         <property name="dataSource" ref="dataSource"/>
     </bean>
     <!--需要实施业务增强的目标业务bean-->
-    <bean id = "bbtFormTarget" class="xx.xx.xxx.xxx"
-        p:froumDao-ref="formDao"/>
+    <bean id = "bbtFormTarget" class="com.zhuhaoman.aop.service.BbtForum"
+        p:forumDao-ref="forumDao"/>
 
     <bean id="bbbForm" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"
         p:transactionManager-ref="txManager"
