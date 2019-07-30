@@ -1,5 +1,7 @@
 package com.zhuhaoman.aop.dao;
 
+import org.apache.ibatis.annotations.Mapper;
+
 /**
  * @ClassName ForumDao
  * @Description TODO
