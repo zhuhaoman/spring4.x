@@ -7,7 +7,7 @@ import org.springframework.cglib.proxy.NoOp;
 
 /**
  * @ClassName TestCglib
- * @Description TODO
+ * @Description
  * @Author zhuhaoman
  * @Date 2019/7/30 12:00
  **/
@@ -28,8 +28,10 @@ public class TestCglib {
 
         Callback noopCb = NoOp.INSTANCE;
         Callback callback1 = new TargetInterceptor();
-        Callback fixedCalue = new TargetResultFixed();
-
+        Callback fixedValue = new TargetResultFixed();
+        Callback[] cbarray = new Callback[]{callback1,noopCb,fixedValue};
+        enhancer.setCallbacks(cbarray);
+        enhancer.setCallbackFilter(filter);
 
     }
 }
