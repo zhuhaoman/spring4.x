@@ -11,5 +11,6 @@ public class TestInterface {
         BookProxy bookProxy = new BookProxy();
         BookInterface impl = (BookInterface) bookProxy.getInstance(new BookImpl());
         impl.intercept();
+        impl.addBook();
     }
 }
