@@ -3,7 +3,6 @@ package com.zhuhaoman.cglib;
 import org.springframework.cglib.proxy.Enhancer;
 import org.springframework.cglib.proxy.InterfaceMaker;
 import org.springframework.cglib.proxy.MethodInterceptor;
-import org.springframework.cglib.proxy.MethodProxy;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
