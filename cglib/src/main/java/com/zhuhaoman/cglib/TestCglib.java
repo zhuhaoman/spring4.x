@@ -33,5 +33,9 @@ public class TestCglib {
         enhancer.setCallbacks(cbarray);
         enhancer.setCallbackFilter(filter);
 
+        System.out.println(targetObject);
+        System.out.println(targetObject.method1("mmm2"));
+        System.out.println(targetObject.method2(100));
+        System.out.println(targetObject.method3(200));
     }
 }
