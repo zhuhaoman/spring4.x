@@ -25,6 +25,6 @@ public class MethodPerformance {
     public void printPerformance() {
         end = System.currentTimeMillis();
         long elaspe = end - begin;
-        System.out.println(serviceMethod + "cost " + elaspe + " mills");
+        System.out.println(serviceMethod + " cost " + elaspe + " mills");
     }
 }
