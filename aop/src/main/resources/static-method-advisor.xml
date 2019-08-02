@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="waiterTarget" class="com.zhuhaoman.aop.monitor.forth.NaiveWaiter"/>
+    <bean id="sellerTarget" class="com.zhuhaoman.aop.monitor.sixth.Seller"/>
+    <bean id="greetingAdvice" class="com.zhuhaoman.aop.monitor.sixth.GreetingBeforeAdvice"/>
+    <bean id="greetingAdvisor" class="com.zhuhaoman.aop.monitor.sixth.GreetingAdvisor"
+        p:advice-ref="greetingAdvice"/>
+    <!--父bean定义公共的配置信息-->
+    <bean id="parent" abstract="true"
+          class="org.springframework.aop.framework.ProxyFactoryBean"
+          p:interceptorNames="greetingAdvisor"
+          p:proxyTargetClass="true"/>
+
+    <bean id="waiter" parent="parent" p:target-ref="waiterTarget"/>
+    <bean id="seller" parent="parent" p:target-ref="sellerTarget"/>
+
+</beans>
