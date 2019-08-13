@@ -11,6 +11,7 @@ import org.aspectj.lang.annotation.Aspect;
  **/
 @Aspect
 public class TestAnnotation {
+
     //@annotation表示标注了某个注解的所有方法
     @AfterReturning("@annotation(com.zhuhaoman.aop.aspect.NeedTest)")
     public void needTestFuc() {

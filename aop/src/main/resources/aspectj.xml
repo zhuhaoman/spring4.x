@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+<!--    基于@AspectJ切面的驱动器-->
+<!--    自动为spring容器中匹配@AspectJ切面的bean创建代理-->
+    <aop:aspectj-autoproxy/>
+    <bean id="waiter" class="com.zhuhaoman.aop.monitor.forth.NaiveWaiter"/>
+    <!--<bean class="com.zhuhaoman.aop.aspect.PreGreetingAspect"/>-->
+    <!--<bean class="com.zhuhaoman.aop.aspect.EnableSellerAspect"/>-->
+    <bean id="naughtyWaiter" class="com.zhuhaoman.aop.aspect.NaughtyWaiter"/>
+    <bean class="com.zhuhaoman.aop.aspect.TestAnnotation"/>
 </beans>

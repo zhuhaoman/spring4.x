@@ -6,4 +6,6 @@
         p:brand="BMW"
         p:color="red"
         p:maxSpeed="150"/>
+
+    <bean id="myBeanFactoryPostProcessor" class="com.zhuhaoman.ioc.beanlife.MyBeanFactoryPostProcessor"/>
 </beans>
