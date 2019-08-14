@@ -5,6 +5,8 @@ import lombok.Setter;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.*;
 
+import java.util.List;
+
 /**
  * @ClassName Car
  * @Description TODO
@@ -31,6 +33,8 @@ public class Car implements BeanFactoryAware, BeanNameAware, InitializingBean, D
     private int maxSpeed;
 
     private BeanFactory beanFactory;
+
+    private List<String> aa;
     @Getter
     private String beanName;
 

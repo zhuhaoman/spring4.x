@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--定义为抽象bean-->
+
+<!--    父<bean>的主要功能就是简化子<bean>的配置，所以一般声明为abstract=true,表示这个bean不实例化为一个对应的bean-->
+    <bean id="abstractCar" class="com.zhuhaoman.ioc.lookup.Car"
+        p:brand="AAAAA" p:price="1000" p:desc="测试父子容器" abstract="true"/>
+    <!--继承于abstractCar-->
+    <bean id="car3" p:price="23333" parent="abstractCar"/>
+
+    <bean id="car4" p:price="12222" parent="abstractCar"/>
+
+<!--    depends-on属性显式指定bean前置依赖的bean，前置依赖的bean会在本bean实例化之前创建好-->
+    <bean id="car5" p:price="4545454" parent="abstractCar" depends-on="car3"/>
+</beans>

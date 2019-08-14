@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="car" class="com.zhuhaoman.ioc.lookup.Car"/>
+    <bean id="boss1" class="com.zhuhaoman.ioc.lookup.Boss1">
+        <replaced-method name="getCar" replacer="boss2"/>
+    </bean>
+    <bean id="boss2" class="com.zhuhaoman.ioc.lookup.Boss2"/>
+</beans>
