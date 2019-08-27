@@ -1,6 +1,6 @@
 package com.zhuhaoman.aop.spring
 
-import org.springframework.beans.factory.FactoryBean
+
 import org.springframework.context.annotation.Bean
 import spock.mock.DetachedMockFactory
 

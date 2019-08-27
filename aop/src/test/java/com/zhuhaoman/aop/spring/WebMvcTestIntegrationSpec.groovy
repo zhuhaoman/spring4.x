@@ -10,6 +10,9 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders
 import spock.lang.Specification
 import spock.mock.DetachedMockFactory
 
+import static org.springframework.test.web.client.match.MockRestRequestMatchers.content
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status
+
 @WebMvcTest
 class WebMvcTestIntegrationSpec extends Specification{
     @Autowired
