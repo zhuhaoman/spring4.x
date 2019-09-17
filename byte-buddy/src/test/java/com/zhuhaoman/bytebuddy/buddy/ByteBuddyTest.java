@@ -9,9 +9,7 @@ import net.bytebuddy.dynamic.loading.ClassReloadingStrategy;
 import net.bytebuddy.implementation.FixedValue;
 import net.bytebuddy.implementation.MethodDelegation;
 import net.bytebuddy.matcher.ElementMatchers;
-import org.junit.Assert;
 import org.junit.Test;
-import org.springframework.cglib.proxy.MethodInterceptor;
 
 import java.io.File;
 import java.io.IOException;
