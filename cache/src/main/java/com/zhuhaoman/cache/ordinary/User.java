@@ -14,6 +14,15 @@ import java.io.Serializable;
 @Setter
 @Getter
 public class User implements Serializable {
+    @Override
+    public String toString() {
+        return "User{" +
+                "userId='" + userId + '\'' +
+                ", userName='" + userName + '\'' +
+                ", age=" + age +
+                '}';
+    }
+
     private static final long serialVersionID = -1L;
 
     private String userId;
@@ -24,5 +33,10 @@ public class User implements Serializable {
 
     public User(String userId) {
         this.userId = userId;
+    }
+
+    public User(String userId, String userName) {
+        this.userId = userId;
+        this.userName = userName;
     }
 }
